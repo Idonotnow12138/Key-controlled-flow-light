@@ -1,0 +1,155 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        10/20/2022  21:16:11  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE www.obj TO www
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  www.obj (WWW)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  www (WWW)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0006H     UNIT         ?DT?WWW
+            IDATA   000EH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     005BH     UNIT         ?PR?LSD?WWW
+            CODE    085BH     0029H     UNIT         ?PR?_DELAY?WWW
+            CODE    0884H     0013H     UNIT         ?PR?KEY?WWW
+            CODE    0897H     000CH     UNIT         ?C_C51STARTUP
+            CODE    08A3H     0005H     UNIT         ?PR?MAIN?WWW
+
+
+
+OVERLAY MAP OF MODULE:   www (WWW)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?WWW
+
+?PR?MAIN?WWW
+  +--> ?PR?KEY?WWW
+
+?PR?KEY?WWW
+  +--> ?PR?_DELAY?WWW
+  +--> ?PR?LSD?WWW
+
+?PR?LSD?WWW
+  +--> ?PR?_DELAY?WWW
+
+
+
+SYMBOL TABLE OF MODULE:  www (WWW)
+
+  VALUE           TYPE          NAME
+BL51 BANKED LINKER/LOCATER V6.22                                                      10/20/2022  21:16:11  PAGE 2
+
+
+  ----------------------------------
+
+  -------         MODULE        WWW
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:0090H         PUBLIC        P1
+  C:0864H         PUBLIC        _delay
+  D:0008H         PUBLIC        flag
+  C:08A3H         PUBLIC        main
+  D:0009H         PUBLIC        temp
+  C:0800H         PUBLIC        lsd
+  C:0884H         PUBLIC        key
+  D:000BH         PUBLIC        num
+  D:000CH         PUBLIC        w
+  B:0090H.0       PUBLIC        key0
+  C:0860H         SYMBOL        L?0032
+  -------         PROC          L?0031
+  -------         ENDPROC       L?0031
+  C:0860H         SYMBOL        L?0032
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        q
+  -------         DO            
+  D:0004H         SYMBOL        c
+  D:0002H         SYMBOL        f
+  -------         ENDDO         
+  C:0864H         LINE#         7
+  C:0864H         LINE#         8
+  C:0864H         LINE#         9
+  C:0867H         LINE#         10
+  C:086EH         LINE#         11
+  C:086EH         LINE#         12
+  C:087CH         LINE#         13
+  C:0883H         LINE#         14
+  -------         ENDPROC       _DELAY
+  -------         PROC          LSD
+  C:0800H         LINE#         15
+  C:0800H         LINE#         16
+  C:0800H         LINE#         17
+  C:0806H         LINE#         18
+  C:0809H         LINE#         19
+  C:080CH         LINE#         20
+  C:080CH         LINE#         21
+  C:0811H         LINE#         22
+  C:0811H         LINE#         23
+  C:081CH         LINE#         24
+  C:081FH         LINE#         25
+  C:0822H         LINE#         26
+  C:0833H         LINE#         27
+  C:0838H         LINE#         28
+  C:0838H         LINE#         29
+  C:0843H         LINE#         30
+  C:0846H         LINE#         31
+  C:0849H         LINE#         32
+  C:085AH         LINE#         33
+  C:085AH         LINE#         34
+  -------         ENDPROC       LSD
+  -------         PROC          KEY
+BL51 BANKED LINKER/LOCATER V6.22                                                      10/20/2022  21:16:11  PAGE 3
+
+
+  C:0884H         LINE#         35
+  C:0884H         LINE#         36
+  C:0884H         LINE#         37
+  C:0887H         LINE#         38
+  C:0887H         LINE#         39
+  C:088EH         LINE#         40
+  C:0891H         LINE#         41
+  C:0891H         LINE#         42
+  C:0891H         LINE#         43
+  C:0891H         LINE#         44
+  C:0894H         LINE#         45
+  C:0896H         LINE#         46
+  C:0896H         LINE#         47
+  C:0896H         LINE#         48
+  -------         ENDPROC       KEY
+  -------         PROC          MAIN
+  C:08A3H         LINE#         49
+  C:08A3H         LINE#         50
+  C:08A3H         LINE#         51
+  C:08A3H         LINE#         52
+  C:08A3H         LINE#         53
+  C:08A6H         LINE#         54
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        WWW
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 009CH BYTE ( 7%) *
+******************************************************************************
+
+Program Size: data=15.0 xdata=0 code=171
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
